@@ -156,6 +156,7 @@ body {
 
 .cardsports {
     width: 400px;
+
     & .imagen {
         &::before {
             background: rgba(0, 0, 0, 0.1);
@@ -212,7 +213,8 @@ body {
     text-align: center;
     color: white;
 }
-select{
+
+select {
     background-color: #c01717;
     border: none;
     color: white;
@@ -220,8 +222,83 @@ select{
     border-radius: 10px;
     padding: .1rem .5rem;
 }
-option{
+
+option {
     text-align: center;
     background-color: white;
     color: #c01717;
+}
+
+.footer-container {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    color: white;
+    background-color: black;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.informacion {
+    display: flex;
+    margin-top: 1rem;
+    gap: 2rem;
+
+    & h1 {
+        color: #c01717;
+    }
+
+    & p {
+        text-align: justify;
+    }
+
+    & .aviso {
+        margin-top: 1rem;
+        color: #c01717;
+    }
+}
+
+.vertical-line {
+    width: 1px;
+    height: 200px;
+    background-color: red;
+}
+
+.autores {
+    /* text-align: center; */
+    & h1{
+        color: #c01717;
+    }
+}
+
+.listaautores {
+    display: flex;
+    gap: 5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+.red{
+    display: flex;
+    gap: 1rem;
+}
+.redes{
+    margin-left: 1rem;
+    & a{
+        text-decoration: none;
+    }
+}
+.icono{
+    color: white;
+    font-size: 20px;
+    background-color: #c01717;
+    padding:7px;
+    margin-top: 5px;
+    width: 45px;
+    text-align: center;
+    border-radius: 10px;
+}
+.usuario{
+    color: white;
+    font-size: 20px;
+    margin-top: 10px;
 }

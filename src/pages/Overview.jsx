@@ -31,7 +31,7 @@ const Overview = () => {
             <div className="favorite">
               <button onClick={(e) => { addFavorite(jugador.nombre) }}>
                 {
-                  favorites[jugador.nombre] ? (<i class="fa-solid fa-star like"></i>) : (<i class="fa-solid fa-star nolike"></i>)
+                  favorites[jugador.nombre] ? (<i className="fa-solid fa-star like"></i>) : (<i className="fa-solid fa-star nolike"></i>)
                 }
 
               </button>
