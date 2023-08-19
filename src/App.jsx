@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import './App.css'
 import Navegacion from './Components/Navegacion'
+import Footer from './Components/Footer'
 import Overview from './pages/Overview'
 import Content from './pages/Content'
 import Create from './pages/Create'
 import { DataProvider } from './context/DataContext'
-import Footer from './Components/Footer'
 
 function App() {
 
