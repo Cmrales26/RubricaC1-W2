@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #1C1C1C;
+}
+
+.navegacion {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 5rem;
+    align-items: center;
+    background-color: black;
+
+    & .logo {
+        color: #c01717;
+    }
+}
+
+.Botones-Navegacion {
+    display: flex;
+    gap: 2rem;
+
+    & button {
+        cursor: pointer;
+        background-color: #c01717;
+        border: none;
+        padding: .5rem 1rem;
+        border-radius: 10px;
+        color: white;
+        transition: ease-in-out .2s;
+    }
+
+    & button:active {
+        transform: scale(1.4);
+    }
+}
+
+.card {
+    color: white;
+    background-color: black;
+    position: relative;
+    border-radius: 10px;
+    width: 310px;
+
+    & .imagen {
+        position: relative;
+
+        & img {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            height: 350px;
+            width: 100%;
+            display: block;
+        }
+
+        &::before {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+    }
+}
+
+.deporte {
+    position: absolute;
+    z-index: 2;
+    color: white;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.favorite {
+    position: absolute;
+    z-index: 2;
+    left: 85%;
+    top: 2%;
+
+    & button {
+        cursor: pointer;
+        padding: 0;
+        background: none;
+        border: none;
+        outline: none;
+        transition: ease-in-out .09s;
+        
+        &:active{
+            transform: scale(1.4);
+        }
+
+        & .fa-solid {
+            color: white;
+            font-size: 25px;
+        }
+        & .like{
+            color: #FFAA1D;
+        }
+    }
+}
+
+.Contenedor-Cards1 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.information {
+    padding: 1.5rem;
+    text-align: justify;
+}
+
+.nombre-numero {
+    display: flex;
+    justify-content: space-between;
+
+    & p {
+        color: red;
+        font-weight: 700;
+    }
+}
+
+.description {
+    margin-top: 1rem;
+    height: 200px;
+}
+
+.Tituloseccion {
+    text-align: center;
+    margin: 2rem;
+    color: #c01717;
+}
