@@ -26,8 +26,8 @@ function App() {
         {
           overview ? <Overview /> : (content ? <Content /> : <Create />)
         }
-      </DataProvider>
       <Footer/>
+      </DataProvider>
     </>
   )
 }
