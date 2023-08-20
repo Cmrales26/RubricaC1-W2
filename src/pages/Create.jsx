@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { DataContext } from "../context/DataContext";
 
-const Create = () => {
+const Create = (props) => {
   const { Categorias, datacard2, setDatacard2, } = useContext(DataContext);
 
   // DATOS HOOK
@@ -57,6 +57,18 @@ const Create = () => {
     }
     newData2.push(newSportadd)
     setDatacard2(newData2)
+
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Your work has been saved',
+      showConfirmButton: false,
+      timer: 1500
+    })
+
+    props.setOverview(false)
+    props.setContent(true)
+    props.setCreate(false)
   }
 
   return (
