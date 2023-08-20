@@ -155,7 +155,9 @@ body {
 }
 
 .cardsports {
+    max-width: 400px;
     width: 400px;
+    height: 100%;
 
     & .imagen {
         &::before {
@@ -199,6 +201,7 @@ body {
 .descriptionsports p {
     margin-top: 1rem;
     height: 200px;
+    overflow-y: auto;
 }
 
 .title-and-filter {
@@ -265,8 +268,9 @@ option {
 }
 
 .autores {
+
     /* text-align: center; */
-    & h1{
+    & h1 {
         color: #c01717;
     }
 }
@@ -277,28 +281,172 @@ option {
     flex-wrap: wrap;
     margin-top: 1rem;
 }
-.red{
+
+.red {
     display: flex;
     gap: 1rem;
 }
-.redes{
+
+.redes {
     margin-left: 1rem;
-    & a{
+
+    & a {
         text-decoration: none;
     }
 }
-.icono{
+
+.icono {
     color: white;
     font-size: 20px;
     background-color: #c01717;
-    padding:7px;
+    padding: 7px;
     margin-top: 5px;
     width: 45px;
     text-align: center;
     border-radius: 10px;
 }
-.usuario{
+
+.usuario {
     color: white;
     font-size: 20px;
     margin-top: 10px;
+}
+
+.contenedor-todo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.formulario h3 {
+    color: red;
+    text-align: center;
+}
+
+.formulario {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+form {
+    color: #c01717;
+    width: 100%;
+    flex-direction: row;
+    font-weight: 600;
+}
+
+.divform {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin-top: 1rem;
+}
+
+.sport-cat {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: nowrap;
+}
+
+input[type="text"] {
+    border-radius: 10px;
+    padding: .5rem;
+    border: 2px solid #b4b4b4;
+    text-indent: 10px;
+    margin-top: .5rem;
+}
+
+.Select-Form {
+    margin-top: .5rem;
+    padding: .25rem;
+    border: 2px solid #b4b4b4;
+    background-color: white;
+    color: black;
+    text-indent: 10px;
+}
+
+.option-Form {
+    text-align: left;
+    background-color: white;
+    color: #1C1C1C !important;
+}
+
+textarea {
+    resize: none;
+    padding: 1rem;
+    border: 2px solid #b4b4b4;
+    border-radius: 10px;
+    margin-top: .5rem;
+}
+
+.botonadd {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.addsport {
+    border: none;
+    background-color: #c01717;
+    color: white;
+    padding: 1rem 6rem;
+    border-radius: 10px;
+    transition: ease-in-out .2s;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+.card-preview{
+    margin: 0 auto;
+    & h1{
+        color: white;
+        margin-bottom: 1rem;
+    }
+}
+
+.cardsportsadd{
+    width: 400px;
+    height: 75%;
+    & .imagenadd{
+        width: fit-content;
+        & img{
+            width: 100%;
+        }
+    }   
+}
+.informationadd {
+    padding: 1.5rem;
+    text-align: justify;
+    font-size: 12px;
+}
+.descriptioncardadd {
+    margin-top: 1rem;
+}
+.botoncardadd{
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 2rem;
+    transition: ease-in-out .4s;
+
+    & a {
+        color: white;
+        background-color: #c01717;
+        text-decoration: none;
+        padding: .5rem 1rem;
+        border-radius: 10px;
+    }
+
+    &:hover {
+        transform: scale(1.03);
+    }
+
+    & .performer {
+        font-weight: 600;
+        text-decoration: underline;
+    }
 }

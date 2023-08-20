@@ -26,20 +26,20 @@ const Footer = () => {
             <div className="redes">
               <div className="github">
                 <a href="https://github.com/Cmrales26" target='_blank' className='red'>
-                  <div className="icono"><i class="fa-brands fa-github"></i></div>
+                  <div className="icono"><i className="fa-brands fa-github"></i></div>
                   <div className="usuario"><p>Cmrales26</p></div>
                 </a>
               </div>
               <div className="linkedin">
                 <a href="https://www.linkedin.com/in/cmrales26/" target='_blank' className='red'>
-                  <div className="icono"><i class="fa-brands fa-linkedin-in"></i></div>
+                  <div className="icono"><i className="fa-brands fa-linkedin-in"></i></div>
                   <div className="usuario"><p>Cmrales26</p></div>
                 </a>
 
               </div>
               <div className="twitter">
                 <a href="https://twitter.com/Cmrales26" target='_blank' className='red'>
-                  <div className="icono"><i class="fa-brands fa-x-twitter"></i></div>
+                  <div className="icono"><i className="fa-brands fa-x-twitter"></i></div>
                   <div className="usuario"><p>@Cmrales26</p></div>
                 </a>
 
@@ -55,13 +55,13 @@ const Footer = () => {
             <div className="redes">
               <div className="github">
                 <a href="https://github.com/AndyDA1810" target='_blank' className='red'>
-                  <div className="icono"><i class="fa-brands fa-github"></i></div>
+                  <div className="icono"><i className="fa-brands fa-github"></i></div>
                   <div className="usuario"><p>AndyDA1810</p></div>
                 </a>
               </div>
               <div className="linkedin">
                 <a href="https://www.linkedin.com/in/andrea-dom%C3%ADnguez-afanador-6a00a217b/" target='_blank' className='red'>
-                  <div className="icono"><i class="fa-brands fa-linkedin-in"></i></div>
+                  <div className="icono"><i className="fa-brands fa-linkedin-in"></i></div>
                   <div className="usuario"><p>Andrea Dominguez Afanador</p></div>
                 </a>
 
