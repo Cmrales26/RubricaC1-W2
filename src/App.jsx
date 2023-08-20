@@ -18,7 +18,7 @@ function App() {
     <>
       <DataProvider>
         <div className="navegacion">
-          <div className="logo"><h1>DataSports</h1></div>
+          <div className="logo"><a href="#"><h1>DN-Sport</h1></a></div>
           <div className="navbar">
             <Navegacion setOverview={setOverview} setContent={setContent} setCreate={setCreate} />
           </div>

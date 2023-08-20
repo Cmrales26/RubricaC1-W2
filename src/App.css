@@ -16,8 +16,9 @@ body {
     align-items: center;
     background-color: black;
 
-    & .logo {
+    & .logo a {
         color: #c01717;
+        text-decoration: none;
     }
 }
 
