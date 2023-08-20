@@ -24,7 +24,7 @@ const Create = () => {
     setCategory(e.target.value);
   };
 
-  const [description, setDescription] = useState("");
+  const [description, setDescription] = useState();
 
   const addDescription = (e) => {
     setDescription(e.target.value);
@@ -141,6 +141,7 @@ const Create = () => {
 
             <div className="description divform">
               <label htmlFor="Description">Description</label>
+
               <textarea
                 name="Desctiption"
                 id=""
