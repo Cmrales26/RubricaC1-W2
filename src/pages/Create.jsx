@@ -43,9 +43,10 @@ const Create = (props) => {
   };
 
   // AGREGAR DEPORTE
-  const addSporttodata = (e) =>{
-    e.preventDefault()
-    const newData2 = [...datacard2]
+  const addSporttodata = (e) => {
+    e.preventDefault();
+    const newData2 = [...JSON.parse(localStorage.getItem("datacard2")) || []];
+    console.log(newData2)
 
     const newSportadd = {
       image,
@@ -53,23 +54,25 @@ const Create = (props) => {
       description,
       category,
       teamorplayer: tpInfo,
-      teamorplayerinfo: tpLink
-    }
-    newData2.push(newSportadd)
-    setDatacard2(newData2)
+      teamorplayerinfo: tpLink,
+    };
+    newData2.push(newSportadd);
+
+    // Almacena los datos actualizados en el localStorage
+    localStorage.setItem("datacard2", JSON.stringify(newData2));
 
     Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Your work has been saved',
+      position: "top-end",
+      icon: "success",
+      title: "Your work has been saved",
       showConfirmButton: false,
-      timer: 1500
-    })
+      timer: 1500,
+    });
 
-    props.setOverview(false)
-    props.setContent(true)
-    props.setCreate(false)
-  }
+    props.setOverview(false);
+    props.setContent(true);
+    props.setCreate(false);
+  };
 
   return (
     <>
@@ -138,6 +141,7 @@ const Create = (props) => {
                   className="Select-Form"
                   onChange={addCategory}
                   value={category}
+                  required
                 >
                   <option className="option-Form" value="">
                     Choose a sport Category

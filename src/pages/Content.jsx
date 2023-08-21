@@ -1,37 +1,54 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { DataContext } from "../context/DataContext";
 
 const Content = () => {
   const { datacard2, Categorias } = useContext(DataContext);
   const [filtro, setFiltro] = useState("");
 
+  const [localdatacard2, setLocaldatacard2] = useState([])
+
   const handleCategoriaChange = (e) => {
     const selectedCategoria = e.target.value;
     setFiltro(selectedCategoria);
   };
 
-  const filteredData = filtro ? datacard2.filter((deporte) => deporte.category === filtro) : datacard2;
+  useEffect(() => {
+    if (localStorage.getItem("datacard2")) {
+      return
+    } else {
+      localStorage.setItem("datacard2", JSON.stringify(datacard2))
+    }
+  }, [datacard2]);
+
+  useEffect(() => {
+    const storageData = localStorage.getItem("datacard2");
+    if (storageData) {
+      setLocaldatacard2(JSON.parse(storageData))
+    }
+  }, [])
+
+  const filteredData = filtro ? localdatacard2.filter((deporte) => deporte.category === filtro) : localdatacard2;
 
   return (
     <div className="Container">
       <div className="title-and-filter">
-      <div className="titulo">
-        <h1>Sports</h1>
-      </div>
-      <div className="filter">
-        <select
-          name="categoria"
-          value={filtro}
-          onChange={handleCategoriaChange}
-        >
-          <option value="">Choose a sport Category</option>
-          {Categorias.map((opcion, index) => (
-            <option value={opcion} key={index}>
-              {opcion}
-            </option>
-          ))}
-        </select>
-      </div>
+        <div className="titulo">
+          <h1>Sports</h1>
+        </div>
+        <div className="filter">
+          <select
+            name="categoria"
+            value={filtro}
+            onChange={handleCategoriaChange}
+          >
+            <option value="">Choose a sport Category</option>
+            {Categorias.map((opcion, index) => (
+              <option value={opcion} key={index}>
+                {opcion}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
 
       <div className="card-container">
