@@ -11,6 +11,7 @@ body {
 
 .navegacion {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding: 2rem 5rem;
     align-items: center;
@@ -161,6 +162,7 @@ body {
     width: 400px;
     height: 100%;
     word-wrap: break-word;
+
     & .imagen {
         &::before {
             background: rgba(0, 0, 0, 0.1);
@@ -237,7 +239,7 @@ option {
 .footer-container {
     margin-top: 2rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 3fr));
     color: white;
     background-color: black;
     padding: 2rem;
@@ -403,33 +405,39 @@ textarea {
         transform: scale(1.05);
     }
 }
-.card-preview{
+
+.card-preview {
     margin: 0 auto;
     word-wrap: break-word;
-    & h1{
+
+    & h1 {
         color: white;
         margin-bottom: 1rem;
     }
 }
 
-.cardsportsadd{
+.cardsportsadd {
     width: 400px;
     height: 75%;
-    & .imagenadd{
-        & img{
+
+    & .imagenadd {
+        & img {
             width: 100%;
         }
-    }   
+    }
 }
+
 .informationadd {
     padding: 1.5rem;
     text-align: justify;
     font-size: 12px;
 }
+
 .descriptioncardadd {
     margin-top: 1rem;
 }
-.botoncardadd{
+
+.botoncardadd {
     font-size: 12px;
     text-align: center;
     margin-bottom: 2rem;
@@ -450,5 +458,142 @@ textarea {
     & .performer {
         font-weight: 600;
         text-decoration: underline;
+    }
+}
+
+
+
+/* ResponsiveForce */
+@media screen and (max-width: 1024px) {
+    .autores p {
+        /* border: 1px solid red; */
+        font-size: 16px;
+    }
+    
+    .icono {
+        font-size: 16px;
+        padding: 5px;
+        width: 40px;
+    }
+    .divform{
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 948px) {
+    .contenedor-todo{
+        gap: 2rem;
+    }
+    .sport-cat{
+        flex-direction: column ;
+    }
+    .cardsportsadd{
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 742px) {
+    .contenedor-todo{
+        flex-wrap: nowrap;
+        flex-direction: column-reverse;
+    }
+
+    .divform{
+        width: initial;
+    }
+    .card-preview{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+@media screen and (max-width: 660px) {
+    .card {
+        width: 80%;
+
+        & .imagen {
+            & img {
+                background-size: cover;
+                height: auto;
+                width: 100%;
+            }
+
+        }
+    }
+    .description{
+        height: initial;
+    }
+}
+@media screen and (max-width: 496px) {
+    .autores{
+        text-align: center;
+        font-size: 14px;
+        & .redes{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-left: 0;
+            & .usuario{
+                display: none;
+            }
+        }
+        & .listaautores{
+            flex-direction: column;
+            gap: 2rem;
+        }
+    }
+    .informacion{
+        font-size: 14px;
+        flex-direction: column;
+        & .vertical-line{
+            display: none;
+        }
+    }
+    .footer-container{
+        display: block;
+    }
+    .icono {
+        font-size: 20px;
+        padding: 10px;
+        width: 55px;
+    }
+    
+    .navegacion {
+        justify-content: center;
+        & .logo {
+            margin-bottom: 2rem;
+        }
+    }
+
+    .title-and-filter{
+        flex-direction: column;
+        gap: initial;
+        margin-bottom: 2rem;
+    }
+    .descriptionsports p{
+        height: initial;
+        margin-bottom: 1rem;
+    }
+    
+}
+
+@media screen and (max-width: 375px) {
+    *{
+        font-size: 12px;
+    }
+    .card{
+        height: auto;
+    }
+    
+    .icono {
+        font-size: 16px;
+        padding: 5px;
+        width: 30px;
+    }
+    .Botones-Navegacion > button{
+        font-size: 12px;
     }
 }

@@ -62,7 +62,7 @@ const Footer = () => {
               <div className="linkedin">
                 <a href="https://www.linkedin.com/in/andrea-dom%C3%ADnguez-afanador-6a00a217b/" target='_blank' className='red'>
                   <div className="icono"><i className="fa-brands fa-linkedin-in"></i></div>
-                  <div className="usuario"><p>Andrea Dominguez Afanador</p></div>
+                  <div className="usuario"><p>Andrea Dominguez</p></div>
                 </a>
 
               </div>

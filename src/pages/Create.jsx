@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { DataContext } from "../context/DataContext";
 
 const Create = (props) => {
-  const { Categorias, datacard2, setDatacard2, } = useContext(DataContext);
+  const { Categorias } = useContext(DataContext);
 
   // DATOS HOOK
 
@@ -46,7 +46,6 @@ const Create = (props) => {
   const addSporttodata = (e) => {
     e.preventDefault();
     const newData2 = [...JSON.parse(localStorage.getItem("datacard2")) || []];
-    console.log(newData2)
 
     const newSportadd = {
       image,
