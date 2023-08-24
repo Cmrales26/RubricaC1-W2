@@ -24,7 +24,7 @@ function App() {
           </div>
         </div>
         {
-          overview ? <Overview /> : (content ? <Content /> : <Create/>)
+          overview ? <Overview /> : (content ? <Content /> : <Create setOverview={setOverview} setContent={setContent} setCreate={setCreate} />)
         }
         <Footer />
       </DataProvider>

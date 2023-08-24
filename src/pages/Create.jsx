@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { DataContext } from "../context/DataContext";
 
-const Create = () => {
+const Create = (props) => {
   const { Categorias } = useContext(DataContext);
 
   // DATOS HOOK
@@ -57,6 +57,7 @@ const Create = () => {
     };
     newData2.push(newSportadd);
 
+    // Almacena los datos actualizados en el localStorage
     localStorage.setItem("datacard2", JSON.stringify(newData2));
 
     Swal.fire({
@@ -66,7 +67,6 @@ const Create = () => {
       showConfirmButton: false,
       timer: 1500,
     });
-
     props.setOverview(false);
     props.setContent(true);
     props.setCreate(false);
