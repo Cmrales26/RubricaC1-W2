@@ -39,7 +39,7 @@ const data2 = [
     {
         image: "https://www.arsenal.com/sites/default/files/styles/large_16x9/public/images/Match%20report.jpg?auto=webp&itok=ftEQK4f7",
         name: "Football",
-        description: "Football, commonly known as soccer in North America, is a popular team sport played between two teams, each consisting of 11 players. The objective of the game is to score goals by getting a spherical ball into the opponent's net, which is guarded by a goalkeeper. Players use their feet, head, or any part of their body except their hands and arms to control and pass the ball.",
+        description: "Football, or soccer in North America, is a team sport with 11 players on each side. The goal is to score by getting the ball into the opponent's net using any part of the body except hands and arms.",
         category: Categorias[0],
         teamorplayer: "Manchester City",
         teamorplayerinfo: "https://www.mancity.com/",
@@ -47,7 +47,7 @@ const data2 = [
     {
         image: "https://cdn.nba.com/teams/uploads/sites/1610612753/2023/07/paoloceltics2_2400_20230727.jpg",
         name: "Basketball",
-        description: "Basketball, also known as hoops, is a fast-paced team sport played on a rectangular court. The objective of the game is to score points by shooting a ball through the opponent's hoop, which is a raised netted basket. Each team typically consists of five players on the court at a time, and the team with the most points at the end of the game wins.",
+        description: "Basketball, often called hoops, is a fast-paced team sport on a rectangular court. Teams aim to score by shooting a ball into the opponent's hoop, with five players on each side. The team with more points wins.",
         category: Categorias[0],
         teamorplayer: "Lakers",
         teamorplayerinfo: "https://www.nba.com/lakers",
@@ -55,7 +55,7 @@ const data2 = [
     {
         image: "https://img.olympicchannel.com/images/image/private/t_s_pog_staticContent_hero_md_2x/f_auto/v1536936974/primary/exvzqcvorticinejmmel",
         name: "Voleiball",
-        description: "Volleyball is a team sport in which two teams, typically consisting of six players each, compete to score points by sending a ball over a net and into the opponent's court. The objective is to make the ball touch the ground within the opposing team's playing area while following certain rules and regulations.",
+        description: "Volleyball, a team sport with six players per team, scores by sending the ball over the net into the opponent's court, aiming to make it touch the ground within their playing area, following specific rules.",
         category: Categorias[0],
         teamorplayer: "Zenit Kazan",
         teamorplayerinfo: "https://zenit-kazan.com/eng/team/zenit/players/",
@@ -63,7 +63,7 @@ const data2 = [
     {
         image: "https://hips.hearstapps.com/hmg-prod/images/charles-leclerc-of-monaco-driving-the-ferrari-f1-75-on-news-photo-1653759186.jpg?crop=0.941xw:0.820xh;0.0572xw,0.0887xh&resize=1200:*",
         name: "Formula 1",
-        description: "Formula 1, often abbreviated as F1, is a premier motorsport discipline known for its high-speed, open-wheel racing. It is considered one of the most prestigious and technologically advanced forms of motor racing in the world. In Formula 1, teams and drivers compete in a series of Grand Prix races held on a variety of circuits, including traditional race tracks, street circuits, and occasionally, road courses.",
+        description: `Formula 1, often abbreviated as F1, is premier motorsport with high-speed, open-wheel racing. It's prestigious and technologically advanced. Teams and drivers compete in Grand Prix races on various circuits, including tracks, streets, and road courses `,
         category: Categorias[1],
         teamorplayer: "RedBull",
         teamorplayerinfo: "https://www.redbullracing.com/int-en",
@@ -71,7 +71,7 @@ const data2 = [
     {
         image: "https://rxi.iscdn.net/2023/07/271965_viallealignmediamx23spring-creek042.jpg",
         name: "Motocross",
-        description: "Motocross is an exhilarating motorsport characterized by off-road racing on specially designed dirt tracks or circuits. In motocross, skilled riders compete on lightweight motorcycles, typically with powerful engines and advanced suspension systems, to navigate a challenging course filled with jumps, bumps, tight turns, and other obstacles. ",
+        description: "Motocross, an exciting motorsport, features off-road racing on dirt tracks. Skilled riders on powerful, lightweight motorcycles tackle challenging courses with jumps, turns, and obstacles.",
         category: Categorias[1],
         teamorplayer: "RedBull KTM",
         teamorplayerinfo: "https://www.ktm.com/es-co/racing.html",
@@ -95,7 +95,7 @@ const data2 = [
     {
         image: "https://images.sportsnhobbies.org/domino-combination.jpg",
         name: "Dominoes",
-        description: "Dominoes is a classic board game played with rectangular tiles divided into two squares, each marked with a number of dots on both sides. Players match tiles that have matching numbers, aiming to get rid of all their tiles while blocking their opponents in the process.",
+        description: "Dominoes, a classic board game with rectangular tiles, involves matching numbered dots to eliminate tiles and block opponents while playing.",
         category: Categorias[2],
         teamorplayer: "Björn Andreas",
         teamorplayerinfo: "https://www.dominospiel.de/es/campeonatos/campeonato-mundial.html#:~:text=%C2%A1Bj%C3%B6rn%20Andreas%20Wolst%20es%20el%20Campe%C3%B3n%20Mundial%20de%20Domin%C3%B3%202022!&text=El%20defensor%20del%20t%C3%ADtulo%20y,por%20detr%C3%A1s%2C%20en%2017%C2%AA%20posici%C3%B3n.",
@@ -103,7 +103,7 @@ const data2 = [
     {
         image: "https://images.sportsbrief.com/images/1120/ac7db94b3941d8cb.jpeg?v=1",
         name: "Billiards",
-        description: " Billiards is a refined and precision-based cue sport that offers players a captivating blend of strategy, skill, and finesse. It is typically played on a rectangular table covered in green cloth, equipped with six pockets. The objective of the game is for players to use a cue stick to skillfully strike a set of numbered and colored balls and attempt to pocket them in specific pockets on the table.",
+        description: " Billiards is a precise cue sport played on a rectangular table with pockets. Players use a cue stick to skillfully pocket numbered and colored balls, combining strategy and finesse.",
         category: Categorias[2],
         teamorplayer: "Jeanette Lee",
         teamorplayerinfo: "https://en.wikipedia.org/wiki/Jeanette_Lee",

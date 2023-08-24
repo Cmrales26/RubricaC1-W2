@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { DataContext } from "../context/DataContext";
 
-const Create = (props) => {
+const Create = () => {
   const { Categorias } = useContext(DataContext);
 
   // DATOS HOOK
