@@ -599,7 +599,8 @@ textarea {
             display: initial;
         }
         & img{
-            width: 100px !important;
+            width: 90px !important;
+            height: 70px !important;
         }
     }
     
