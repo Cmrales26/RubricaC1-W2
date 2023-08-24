@@ -13,14 +13,22 @@ function App() {
   const [content, setContent] = useState(false)
   const [create, setCreate] = useState(false)
 
+  const volveroverview = () =>{
+    setOverview(true)
+    setContent(false)
+    setCreate(false)
+  }
 
   return (
     <>
       <DataProvider>
         <div className="navegacion">
-          <div className="logo"><a href="#"><h1 onClick={()=> setOverview(true) } >DN-Sport</h1></a></div>
+          <div className="logo" onClick={volveroverview}>
+            <img className='logoweb' src="/src/assets/Logotipo.svg" alt="" />
+            <img className='logoMobile' src="/src/assets/Imagotipo.svg" alt="" />
+          </div>
           <div className="navbar">
-            <Navegacion setOverview={setOverview} setContent={setContent} setCreate={setCreate} />
+            <Navegacion setOverview={setOverview} setContent={setContent} setCreate={setCreate} overview = {overview} content = {content} create = {create} />
           </div>
         </div>
         {
