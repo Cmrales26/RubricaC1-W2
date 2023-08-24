@@ -24,7 +24,7 @@ function App() {
       <DataProvider>
         <div className="navegacion">
           <div className="logo" onClick={volveroverview}>
-            <img className='logoweb' src="/public/Logotipo.svg" alt="" />
+            <img className='logoweb' src="/dist/Logotipo.svg" alt="" />
             <img className='logoMobile' src="/public/Imagotipo.svg" alt="" />
           </div>
           <div className="navbar">
