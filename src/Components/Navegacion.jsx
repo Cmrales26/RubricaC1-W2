@@ -20,7 +20,7 @@ const Navegacion = (props) => {
 
   return (
     <div className='Botones-Navegacion'>
-      <button className={props.overview ? 'active' : ''} onClick={Voverview}>Overview</button>
+      <button className={props.overview ? 'active' : ''} onClick={Voverview}>Overview </button>
       <button className={props.content ? 'active' : ''} onClick={Vcontent}>Content</button>
       <button className={props.create ? 'active' : ''} onClick={Vcreate}>Create</button>
     </div>

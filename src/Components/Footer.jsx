@@ -12,7 +12,7 @@ const Footer = () => {
             <p>This website has been created for academic purposes. &copy; </p>
           </div>
         </div>
-        <div class="vertical-line"></div>
+        <div className="vertical-line"></div>
       </div>
       <div className="autores">
         <h1>Autores</h1>

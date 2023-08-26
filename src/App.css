@@ -346,11 +346,14 @@ option {
     border-radius: 10px;
 }
 
-form {
-    color: #c01717;
+form{
+    color: #1C1C1C;
     width: 100%;
     flex-direction: row;
     font-weight: 600;
+}
+.error{
+    color: #c01717;
 }
 
 .divform {

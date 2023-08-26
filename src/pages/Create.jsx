@@ -1,76 +1,93 @@
 import React, { useContext, useState } from "react";
 import { DataContext } from "../context/DataContext";
+import { useFormik } from "formik";
+import * as Yup from "yup"
 
 const Create = (props) => {
   const { Categorias } = useContext(DataContext);
 
-  // DATOS HOOK
+  const validationSchema = Yup.object({
 
-  const [image, setImage] = useState("");
+    image: Yup.string().required("Imagen Link is required")
+      .min(10, "Link must be at least 10 characters")
+      .max(200, "Link must be at most 200 characters")
+      .matches(
+        /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/,
+        "This link format is not allowed."
+      ),
 
-  const addImage = (e) => {
-    setImage(e.target.value);
-  };
+    sport: Yup.string().required("Sport Name is Required")
+      .min(3, "Sport name must be at least 3 characters")
+      .max(20, "Sport name must be at most 20 characters")
+      .matches(
+        /^(?!\s)(.*\S)?(?<!\s)$/,
+        "No spaces at the beginning or end are allowed"
+      ),
 
-  const [sport, setSport] = useState("");
+    category: Yup.string().required("Sport Category is Required"),
 
-  const addSport = (e) => {
-    setSport(e.target.value);
-  };
+    description: Yup.string().required("Sport Description is Required")
+      .min(50, "Sport description must be at least 50 characters")
+      .max(200, "Sport description musth be at most 200 characters")
+      .matches(
+        /^(?!\s)(.*\S)?(?<!\s)$/,
+        "No spaces at the beginning or end are allowed"
+      ),
 
-  const [category, setCategory] = useState("");
+    tpInfo: Yup.string().required("A top performer team or player is Required")
+      .min(3, "Top performer must be at least 3 characters")
+      .max(15, "Top performer must be at most 15 characters")
+      .matches(
+        /^(?!\s)(.*\S)?(?<!\s)$/,
+        "No spaces at the beginning or end are allowed"
+      ),
 
-  const addCategory = (e) => {
-    setCategory(e.target.value);
-  };
+    tpLink: Yup.string().required("Top Performer link is Required")
+      .min(10, "Top performer link must be at least 10 characters")
+      .max(50)
+      .matches(
+        /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/,
+        "This link format is not allowed"
+      )
+  })
 
-  const [description, setDescription] = useState();
+  const formik = useFormik({
+    initialValues: {
+      image: "",
+      sport: "",
+      category: "",
+      description: "",
+      tpInfo: "",
+      tpLink: "",
+    },
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      const newSportData = {
+        image: values.image,
+        name: values.sport,
+        description: values.description,
+        category: values.category,
+        teamorplayer: values.tpInfo,
+        teamorplayerinfo: values.tpLink
+      }
 
-  const addDescription = (e) => {
-    setDescription(e.target.value);
-  };
+      const newData2 = [...JSON.parse(localStorage.getItem("datacard2")) || []];
+      newData2.push(newSportData);
 
-  const [tpInfo, setTpInfo] = useState("");
+      localStorage.setItem("datacard2", JSON.stringify(newData2));
 
-  const addtpInfo = (e) => {
-    setTpInfo(e.target.value);
-  };
-
-  const [tpLink, setTpLink] = useState("");
-
-  const addtpLink = (e) => {
-    setTpLink(e.target.value);
-  };
-
-  // AGREGAR DEPORTE
-  const addSporttodata = (e) => {
-    e.preventDefault();
-    const newData2 = [...JSON.parse(localStorage.getItem("datacard2")) || []];
-
-    const newSportadd = {
-      image,
-      name: sport,
-      description,
-      category,
-      teamorplayer: tpInfo,
-      teamorplayerinfo: tpLink,
-    };
-    newData2.push(newSportadd);
-
-    // Almacena los datos actualizados en el localStorage
-    localStorage.setItem("datacard2", JSON.stringify(newData2));
-
-    Swal.fire({
-      position: "top-end",
-      icon: "success",
-      title: "Your work has been saved",
-      showConfirmButton: false,
-      timer: 1500,
-    });
-    props.setOverview(false);
-    props.setContent(true);
-    props.setCreate(false);
-  };
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Your work has been saved",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      props.setOverview(false);
+      props.setContent(true);
+      props.setCreate(false);
+    }
+  })
 
   return (
     <>
@@ -79,66 +96,81 @@ const Create = (props) => {
           <h1>Card Preview</h1>
           <div className="card cardsportsadd">
             <div className="imagenadd">
-              <img src={image} alt="Agregar Imagen" />
+              <img src={formik.values.image} alt="Agregar Imagen" />
             </div>
             <div className="informationadd">
               <div className="nombre">
-                <h2>{sport}</h2>
+                <h2>{formik.values.sport}</h2>
               </div>
               <div className="categoria">
                 <p>
-                  Catergory: <span>{category}</span>
+                  Catergory: <span>{formik.values.category}</span>
                 </p>
               </div>
               <div className="descriptioncardadd">
-                <p>{description}</p>
+                <p>{formik.values.description}</p>
               </div>
             </div>
             <div className="botoncardadd">
-              <a href={tpLink} target="_blank">
-                Top Performer: <span className="performer">{tpInfo}</span>
+              <a href={formik.values.tpLink} target="_blank">
+                Top Performer: <span className="performer">{formik.values.tpInfo}</span>
               </a>
             </div>
           </div>
         </div>
 
+        {/* !!FORMULARIO */}
+
         <div className="formulario">
           <h3>Add Sport</h3>
-          <form action="">
+          <form onSubmit={formik.handleSubmit}>
             <div className="imagen divform">
-              <label htmlFor="Image">Image-url</label>
+              <label htmlFor="image">Image-url</label>
               <input
                 type="text"
-                id="Image"
-                name="Image"
+                id="image"
+                name="image"
                 placeholder="Imagen Link"
-                onChange={addImage}
-                value={image}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.image.trim()}
                 required
               />
+
+              {formik.touched.image && formik.errors.image ? (
+                <div className="error">{formik.errors.image}</div>
+              ) : null}
+
             </div>
 
             <div className="sport-cat divform">
               <div className="divform">
-                <label htmlFor="Sport">Sport</label>
+                <label htmlFor="sport">Sport</label>
                 <input
                   type="text"
-                  id="Sport"
-                  name="Sport"
+                  id="sport"
+                  name="sport"
                   placeholder="Sport Name"
-                  onChange={addSport}
-                  value={sport}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.sport}
                   required
                 />
+
+                {formik.touched.sport && formik.errors.sport ? (
+                  <div className="error">{formik.errors.sport}</div>
+                ) : null}
+
               </div>
               <div className="divform">
-                <label htmlFor="Category">Category</label>
+                <label htmlFor="category">Category</label>
 
                 <select
-                  name="Category"
+                  name="category"
                   className="Select-Form"
-                  onChange={addCategory}
-                  value={category}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.category}
                   required
                 >
                   <option className="option-Form" value="">
@@ -150,48 +182,71 @@ const Create = (props) => {
                     </option>
                   ))}
                 </select>
+
+                {formik.touched.category && formik.errors.category ? (
+                  <div className="error">{formik.errors.category}</div>
+                ) : null}
+
               </div>
             </div>
 
             <div className="description divform">
-              <label htmlFor="Description">Description</label>
+              <label htmlFor="description">Description</label>
 
               <textarea
-                name="Desctiption"
-                id=""
+                name="description"
+                id="description"
                 cols="30"
                 placeholder="Sport Description"
-                onChange={addDescription}
-                value={description}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.description}
                 rows="10"
               ></textarea>
+
+              {formik.touched.description && formik.errors.description ? (
+                <div className="error">{formik.errors.description}</div>
+              ) : null}
+
             </div>
 
             <div className="topperformace divform">
-              <label htmlFor="top-Performance">Top Performance Name</label>
+              <label htmlFor="tpInfo">Top Performance Name</label>
               <input
                 type="text"
-                id="top-Performance"
-                name="top-Performance"
+                id="tpInfo"
+                name="tpInfo"
                 placeholder="Top Performance Player / Team"
-                onChange={addtpInfo}
-                value={tpInfo}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.tpInfo}
                 required
               />
-              <label htmlFor="top-Performanceurl">Top Performance Page</label>
+
+              {formik.touched.tpInfo && formik.errors.tpInfo ? (
+                <div className="error">{formik.errors.tpInfo}</div>
+              ) : null}
+
+              <label htmlFor="tpLink">Top Performance Page</label>
               <input
                 type="text"
-                id="top-Performanceurl"
-                name="top-Performanceurl"
+                id="tpLink"
+                name="tpLink"
                 placeholder="Top Performance Player / Team Link"
-                onChange={addtpLink}
-                value={tpLink}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.tpLink}
                 required
               />
+
+              {formik.touched.tpLink && formik.errors.tpLink ? (
+                <div className="error">{formik.errors.tpLink}</div>
+              ) : null}
+
             </div>
 
             <div className="botonadd">
-              <button className="addsport" onClick={addSporttodata}>ADD SPORT</button>
+              <button type="submit" className="addsport">ADD SPORT</button>
             </div>
           </form>
         </div>
