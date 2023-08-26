@@ -24,10 +24,10 @@ function App() {
       <DataProvider>
         <div className="navegacion">
           <div className="logo" onClick={volveroverview}>
-            {/* <img className='logoweb' src= "https://i.ibb.co/FJ3RWbn/Logotipo.png" alt="" />
-            <img className='logoMobile' src="https://i.ibb.co/n3KZ2S6/Imagotipo.png" alt="" /> */}
-            <img className='logoweb' src= "https://svgur.com/i/wwF.svg" alt="" />
-            <img className='logoMobile' src="https://svgur.com/i/wuY.svg" alt="" />
+            <img className='logoweb' src= "https://i.ibb.co/FJ3RWbn/Logotipo.png" alt="" />
+            <img className='logoMobile' src="https://i.ibb.co/n3KZ2S6/Imagotipo.png" alt="" />
+            {/* <img className='logoweb' src= "https://svgur.com/i/wwF.svg" alt="" />
+            <img className='logoMobile' src="https://svgur.com/i/wuY.svg" alt="" /> */}
 
           </div>
           <div className="navbar">
