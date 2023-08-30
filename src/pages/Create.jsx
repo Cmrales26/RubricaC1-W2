@@ -96,7 +96,7 @@ const Create = (props) => {
           <h1>Card Preview</h1>
           <div className={ theme ? "card cardsportsadd activecard": "card cardsportsadd"}>
             <div className="imagenadd">
-              <img src={formik.values.image} alt="Agregar Imagen" />
+              <img src={formik.values.image} alt=""/>
             </div>
             <div className="informationadd">
               <div className="nombre">
