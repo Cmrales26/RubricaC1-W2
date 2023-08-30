@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { DataContext } from '../context/DataContext'
 
 const Footer = () => {
+
+  const {theme} = useContext(DataContext)
+
   return (
-    <footer className="footer-container">
+    <footer className={theme ? 'footer-container activefooter' : 'footer-container'}>
       <div className="informacion">
         <div className="data">
           <h1>INFORMATION</h1>
           <p style={{ marginTop: '1rem' }}>Our website is a testament to the power and versatility of React, a cutting-edge JavaScript library that has enabled us to craft a dynamic and engaging online experience. By leveraging a combination of React's core features such as useState, useEffect, localStorage, Context API, Hooks, and conditional routing, we've achieved a robust and user-friendly web application.</p>
-
           <div className="aviso">
             <p>This website has been created for academic purposes. &copy; </p>
           </div>

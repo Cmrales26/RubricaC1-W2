@@ -3,9 +3,10 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: linear .3s;
 }
 
-body {
+.root{
     background-color: #1C1C1C;
 }
 .logoMobile{
@@ -474,6 +475,73 @@ textarea {
         font-weight: 600;
         text-decoration: underline;
     }
+}
+.Likeordark{
+    background:none;
+    color: white;
+    border: none;
+    position: absolute;
+    top: 44px;
+    left: 235px;
+    cursor: pointer;
+    margin-left: 1rem;
+    transition: transform 0.3s ease;
+    & i{
+        font-size: 25px;
+    }
+}
+
+.Likeordark:active{
+    animation: bounce .5s;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(40);
+    }
+    40% {
+      transform: translateY(10px); /* Controla la altura del rebote */
+    }
+    60% {
+      transform: translateY(-10px); /* Controla la altura del rebote */
+    }
+  }
+
+.modoclaro{
+    color: rgb(255, 170, 29);
+    text-shadow: rgba(255, 170, 29, 1) 0px 2px 15px;
+}
+
+/* ! TEMAS */
+
+.root-active{
+    background-color: #fafafa;
+}
+.activenav {
+    background-color: white;
+    & .Botones-Navegacion{
+        & button{
+            color: black;
+        }
+    }
+}
+
+.activefooter{
+    color: black;
+    background-color: white;
+    & .usuario{
+        color: black;
+    }
+}
+.activecard{
+    color: black;   
+    background-color: white
+}
+.activetitulo{
+    color: black;
+}
+.card-previewact h1{
+    color: black;
 }
 
 

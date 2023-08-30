@@ -110,18 +110,23 @@ const data2 = [
     },
 ]
 
+
 export const DataProvider = ({ children }) => {
+    
+    const theme = JSON.parse(localStorage.getItem('Theme')) || false
 
     const [datacard1, setDatacard1] = useState(data1)
 
     const [datacard2, setDatacard2] = useState(data2)
+
     return (
         <DataContext.Provider value={{
             datacard1,
             setDatacard1,
             datacard2,
             setDatacard2,
-            Categorias
+            Categorias,
+            theme
         }}>
             {children}
         </DataContext.Provider>

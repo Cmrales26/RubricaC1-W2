@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup"
 
 const Create = (props) => {
-  const { Categorias } = useContext(DataContext);
+  const { Categorias, theme } = useContext(DataContext);
 
   const validationSchema = Yup.object({
 
@@ -92,9 +92,9 @@ const Create = (props) => {
   return (
     <>
       <div className="contenedor-todo">
-        <div className="card-preview">
+        <div className={theme ? "card-preview card-previewact" : "card-preview"}>
           <h1>Card Preview</h1>
-          <div className="card cardsportsadd">
+          <div className={ theme ? "card cardsportsadd activecard": "card cardsportsadd"}>
             <div className="imagenadd">
               <img src={formik.values.image} alt="Agregar Imagen" />
             </div>

@@ -3,7 +3,7 @@ import { DataContext } from '../context/DataContext'
 
 const Overview = () => {
 
-  const { datacard1 } = useContext(DataContext)
+  const { datacard1, theme } = useContext(DataContext)
 
   const [favorites, setFavorites] = useState({})
 
@@ -27,7 +27,7 @@ const Overview = () => {
       </div>
       <div className='Contenedor-Cards1'>
         {datacard1.map((jugador, index) => (
-          <div className="card" key={index}>
+          <div className={theme ? "card activecard" : "card"} key={index}>
             <div className="favorite">
               <button onClick={(e) => { addFavorite(jugador.nombre) }}>
                 {

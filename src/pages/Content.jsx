@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { DataContext } from "../context/DataContext";
 
 const Content = () => {
-  const { datacard2, Categorias } = useContext(DataContext);
+  const { datacard2, Categorias, theme } = useContext(DataContext);
   const [filtro, setFiltro] = useState("");
 
   const [localdatacard2, setLocaldatacard2] = useState([])
@@ -32,7 +32,7 @@ const Content = () => {
   return (
     <div className="Container">
       <div className="title-and-filter">
-        <div className="titulo">
+        <div className={theme ? "titulo activetitulo" : "titulo"}>
           <h1>Sports</h1>
         </div>
         <div className="filter">
@@ -53,7 +53,7 @@ const Content = () => {
 
       <div className="card-container">
         {filteredData.map((deportes, index) => (
-          <div className="card cardsports" key={index}>
+          <div className={theme ? "card cardsports activecard" : "card cardsports"} key={index}>
             <div className="imagen">
               <img src={deportes.image} alt="" />
             </div>
