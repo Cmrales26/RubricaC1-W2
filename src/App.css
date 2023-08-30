@@ -682,6 +682,13 @@ img[alt]::after {
             height: 70px !important;
         }
     }
+
+    .Likeordark{
+        position: inherit;
+        /* border: 1px solid red; */
+        display: flex;
+        margin-bottom: 2rem;
+    }
     
 }
 
