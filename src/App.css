@@ -33,7 +33,6 @@
 .active{
     color: #c01717 !important; 
     font-weight: 600;
-
 }
 
 .Botones-Navegacion {
@@ -257,6 +256,9 @@ option {
     background-color: black;
     padding: 2rem;
     gap: 2rem;
+}
+.hr-horizontal-line-fotter{
+    display: none
 }
 
 .informacion {
@@ -643,6 +645,13 @@ img[alt]::after {
         & .vertical-line{
             display: none;
         }
+    }
+    .hr-horizontal-line-fotter{
+        display: block;
+        background-color: #c01717;
+        border: none;
+        height: .1rem;
+        margin-bottom: .6rem;
     }
     .footer-container{
         display: block;

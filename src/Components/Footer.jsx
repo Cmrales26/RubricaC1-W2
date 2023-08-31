@@ -16,9 +16,10 @@ const Footer = () => {
           </div>
         </div>
         <div className="vertical-line"></div>
+        <hr className='hr-horizontal-line-fotter' />
       </div>
       <div className="autores">
-        <h1>Autores</h1>
+        <h1>Authors</h1>
         <div className="listaautores">
 
 
